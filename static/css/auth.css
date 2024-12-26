@@ -1,0 +1,67 @@
+/* Устанавливаем фон страницы */
+body {
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Основные стили для формы */
+form {
+  font: 14px Stem-Regular, arial, sans-serif;
+  border: 1px solid #48D1CC; /* Цвет обводки формы */
+  border-radius: 20px;
+  color: #48D1CC;
+  width: 300px; /* Ширина формы */
+  background-color: #1a1a1a;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Поля ввода (текстовые и пароля) */
+input[type="text"], input[type="password"] {
+  text-align: center;
+  border-radius: 4px;
+  width: 100%;
+  padding: 15px 20px;
+  margin: 10px 0;
+  display: block;
+  border: 1px solid #48D1CC;
+  background-color: #2a2a2a;
+  color: #48D1CC;
+  font: 14px Stem-Regular, arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Стили кнопки Войти */
+button {
+  font: 16px Stem-medium, arial, sans-serif;
+  background-color: #48D1CC;
+  border-radius: 8px;
+  color: #1a1a1a;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Стили для ссылки на регистрацию */
+.registration-link {
+  color: #1a1a1a;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.registration-link:hover {
+  color: #48D1CC;
+}

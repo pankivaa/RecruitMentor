@@ -1,0 +1,60 @@
+form {
+  font: 14px Stem-Regular, arial, sans-serif;
+  border: 1px solid #48D1CC; /* Цвет границы */
+  background-color: #1a1a1a; /* Цвет фона формы */
+  -webkit-border-radius: 20px;
+  color: #48D1CC; /* Цвет текста label */
+  width: 25%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+input[type=text], input[type=password] {
+  text-align: center;
+  -webkit-border-radius: 4px;
+  width: auto;
+  padding: 15px 20px;
+  margin: 10px 0;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  border: 1px solid #48D1CC; /* Цвет границы */
+  background-color: #2a2a2a; /* Цвет фона input */
+  box-sizing: border-box;
+  font: 14px Stem-Regular, arial, sans-serif;
+  color: #48D1CC; /* Цвет текста */
+}
+
+button {
+  font: 16px Stem-medium, arial, sans-serif;
+  background-color: #48D1CC; /* Цвет фона кнопки */
+  -webkit-border-radius: 8px;
+  color: #1a1a1a; /* Цвет текста кнопки */
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: auto;
+}
+
+button:hover { 
+  opacity: 0.9;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Общий стиль для центрирования страницы */
+body {
+  background-color: #1a1a1a; /* Цвет фона страницы */
+  color: #48D1CC; /* Цвет текста по умолчанию */
+  font-family: Stem-Regular, arial, sans-serif; /* Основной шрифт */
+  margin: 0;
+  display: flex; /* Flex-контейнер */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+  height: 100vh; /* Высота на весь экран */
+}
+
