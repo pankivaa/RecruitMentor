@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать в RecruitMentor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <style>
+      html {
+          scroll-behavior: smooth; /* CSS плавная прокрутка */
+      }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#how-it-works"><button>Как это работает?</button></a>
+    <a href="#tariffs"><button>Тарифы</button></a>
+    
+    <!-- Кнопка для регистрации -->
+    <a href="{{ url_for('form_authorization') }}">
+      <button type="button" class="login-button">Войти</button>
+  </a>
+  <a href="{{ url_for('form_registration') }}">
+    <button type="button" class="login-button">Регистрация</button>
+</a>
+</div>
+
+    <div class="main-content">
+      <!-- Текстовый блок -->
+      <div class="container">
+          <h1>Добро пожаловать в RecruitMentor!</h1>
+          <p class="description">
+            RecruitMentor — это ваш надежный помощник в поиске лучших кандидатов. 
+            Мы используем новейшие нейросетевые технологии, чтобы автоматизировать процесс подбора персонала, 
+            делая его быстрым и эффективным. 
+          </p>
+          <a href="{{ url_for('form_registration') }}">
+            <button type="button" class="button">Зарегистрироваться</button>
+          </a>
+      </div>
+      
+      <!-- Изображение справа -->
+      <img src="{{ url_for('static', filename='2.png') }}" class="image">
+</div>
+
+
+<div class="recruitment-features">
+  <h2>Почему именно RecruitMentor?</h2>
+
+  <div class="features-container">
+    <div class="feature">
+      <img src="{{ url_for('static', filename='s.png') }}" class="feature-icon">
+      <h3>Скорость</h3>
+      <p>Молниеносная обработка данных и моментальный доступ к лучшим кандидатам.</p>
+    </div>
+
+    <div class="feature">
+      <img src="{{ url_for('static', filename='t.png') }}"class="feature-icon">
+      <h3>Точность</h3>
+      <p>Рекомендации, адаптированные под ваши потребности.</p>
+    </div>
+
+    <div class="feature">
+      <img src="{{ url_for('static', filename='y.png') }}"  class="feature-icon">
+      <h3>Удобство</h3>
+      <p>Простой, продуманный интерфейс для работодателей и рекрутеров любого уровня.</p>
+    </div>
+
+    <div class="feature">
+      <img src="{{ url_for('static', filename='b.png') }}" class="feature-icon">
+      <h3>Безопасность</h3>
+      <p>Ваши данные и данные ваших кандидатов находятся под надёжной защитой.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="how-it-works" class="opis-content">
+  <!-- Текстовый блок -->
+  <div class="container2">
+      <h1>RecruitMentor — ваш умный помощник в мире подбора персонала!</h1>
+      <p class="desc">
+        Наша платформа автоматизирует и упрощает процесс найма с помощью новейших нейросетевых технологий, чтобы вы могли быстро находить идеальных кандидатов, которые максимально соответствуют вашим требованиям. RecruitMentor — это не просто сервис, а инновационное решение, разработанное, чтобы полностью изменить способ, которым компании находят, анализируют и выбирают своих будущих сотрудников.<br><br>
+
+        <h1>Как это работает?</h1>
+        <div class="stage">
+          <h2>Заполнение ключевых параметров вакансии</h2>
+          <p>Укажите необходимые навыки и опыт работы кандидата.<br>Задайте уровень образования и предпочтительные профессиональные и личные качества.</p>
+        </div>
+        <div class="stage">
+          <h2>Мгновенный анализ данных</h2>
+          <p>Алгоритмы RecruitMentor обрабатывают введённые данные и формируют основные критерии подбора.</p>
+        </div>
+        <div class="stage">
+          <h2>Сравнение резюме с заданными параметрами</h2>
+          <p>Нейросеть анализирует резюме и создает рейтинг, отражающий соответствие кандидатов вашей вакансии.</p>
+        </div>
+        <div class="stage">
+          <h2>Готовый список релевантных специалистов</h2>
+          <p>Система предоставляет ранжированный список лучших кандидатов, подходящих именно под ваш запрос.</p>
+        </div>
+        <div class="stage">
+          <h2>Оптимизация под ваши предпочтения</h2>
+          <p>RecruitMentor обучается на ваших выборах, чтобы учитывать стиль подбора и улучшать точность рекомендаций с каждым поиском.</p>
+        </div>
+      </p>
+  </div>
+</div>
+
+
+
+
+
+  <!-- Блок "Тарифы" -->
+  <div id="tariffs" class="tariffs-section">
+    <div class="tariff-card">
+        <h2 class="tariff-title">STARTUP</h2>
+        <ul>
+            <li>Ограниченный доступ к функционалу</li>
+            <li>Поиск кандидатов</li>
+            <li>Доступ к базовым фильтрам</li>
+            <li>Имеет ограничение в 10 поисков в месяц</li>
+        </ul>
+       <!-- <p class="tariff-price">2499 /мес</p>
+        <button class="tariff-button">Купить</button>-->
+    </div>
+    <div class="tariff-card">
+        <h2 class="tariff-title">PROMATCH</h2>
+        <ul>
+            <li>Расширенный доступ</li>
+            <li>Продвинутые фильтры</li>
+            <li>Аналитика по кандидатам</li>
+            <li>Интеграция с другими системами</li>
+            <li>Имеет ограничение в 30 поисков в месяц</li>
+        </ul>
+        <!--<p class="tariff-price">5499 /мес</p>
+        <button class="tariff-button">Купить</button>-->
+    </div>
+    <div class="tariff-card">
+        <h2 class="tariff-title">TALENTMASTER</h2>
+        <ul>
+            <li>Полный доступ к функционалу</li>
+            <li>Кастомизация и поддержка 24/7</li>
+            <li>Массовый подбор</li>
+            <li>Отсутствие ограничений по поиску</li>
+        </ul>
+        <p>Подходит для крупных компаний.</p>
+        <!--<p class="tariff-price">По договоренности</p>-->
+        <!--<button class="tariff-button">Узнать подробнее</button>-->
+    </div>
+  </div>
+
+<!-- Блок для контактной информации -->
+<div class="contact-section">
+  <p>Если вас заинтересовало наше предложение, вы можете оставить свои контактные данные, нажав на кнопку ниже.</p>
+  <button class="tariff-button" onclick="openContactForm()">Связаться с нами</button>
+</div>
+
+  <!-- Всплывающая форма для контакта -->
+<div id="contactForm" class="contact-form-overlay">
+  <div class="contact-form-content">
+      <span class="close-button" onclick="closeContactForm()">&times;</span>
+      <h2>Связаться с нами</h2>
+      <form action="#" method="post">
+          <label for="name">Имя:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="phone">Номер телефона:</label>
+          <input type="tel" id="phone" name="phone" required>
+
+          <label for="email">Почта:</label>
+          <input type="email" id="email" name="email" required>
+
+          <button type="submit">Связаться</button>
+      </form>
+  </div>
+</div>
+
+<!-- Скрипт для управления всплывающей формой -->
+<script>
+  function openContactForm() {
+      document.getElementById("contactForm").style.display = "flex";
+  }
+
+  function closeContactForm() {
+      document.getElementById("contactForm").style.display = "none";
+  }
+</script>
+    
+<div class="recruitmentor-intro">
+  <p>Позвольте <strong>RecruitMentor</strong> взять на себя сложные задачи подбора, чтобы вы могли сосредоточиться на действительно важных решениях. Начните поиск талантов, как никогда раньше, и найдите тех, кто сделает вашу команду сильнее.</p>
+  <p class="highlighted-text"><strong>RecruitMentor — ваш персональный помощник по найму, который всегда на шаг впереди.</strong></p>
+</div>
+
+</body>
+</html>

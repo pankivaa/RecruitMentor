@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('edit_profile') }}">
+            <button type="button" class="login-button">Мой профиль</button>
+        </a>
+        <button onclick="window.location.href='/history'">История подборов</button>
+        <button onclick="window.location.href='#tariffs'">Тарифы</button>
+    </div>
+
+
+    <div class="main-content">
+      <!-- Текстовый блок -->
+      <div class="container">
+          <h1>Добро пожаловать в RecruitMentor!</h1>
+          <p class="description">
+            RecruitMentor — это ваш надежный помощник в поиске лучших кандидатов. 
+            Мы используем новейшие нейросетевые технологии, чтобы автоматизировать процесс подбора персонала, 
+            делая его быстрым и эффективным. 
+          </p>
+          <a href="{{ url_for('search_form') }}">
+            <button class="main-button">Найти своего лучшего сотрудника</button>
+        </a>
+      </div>
+      
+      <!-- Изображение справа -->
+      <img src="{{ url_for('static', filename='2.png') }}" class="image">
+</div>
+    
+<div class="tariffs-section">
+  <!-- Карточка тарифа Startup -->
+  <div class="tariff-card">
+      <h2 class="tariff-title">STARTUP</h2>
+      <p>Базовый</p>
+      <ul>
+          <li>Ограниченный доступ к функционалу</li>
+          <li>Поиск кандидатов</li>
+          <li>Доступ к базовым фильтрам</li>
+          <li>Имеет ограничение в 10 поисков в месяц</li>
+      </ul>
+  </div>
+
+  <!-- Карточка тарифа ProMatch -->
+  <div class="tariff-card">
+      <h2 class="tariff-title">PROMATCH</h2>
+      <p>Премиум</p>
+      <ul>
+          <li>Расширенный доступ</li>
+          <li>Продвинутые фильтры</li>
+          <li>Аналитика по кандидатам</li>
+          <li>Интеграция с другими системами</li>
+          <li>Нет ограничений по количеству поисков</li>
+      </ul>
+  </div>
+
+  <!-- Карточка тарифа TalentMaster -->
+  <div class="tariff-card">
+      <h2 class="tariff-title">TALENTMASTER</h2>
+      <p>Корпоративный</p>
+      <ul>
+          <li>Полный доступ к функционалу</li>
+          <li>Кастомизация и поддержка</li>
+          <li>Массовый подбор</li>
+          <li>Отсутствие ограничений по поиску</li>
+      </ul>
+      <p>Подходит для крупных компаний.</p>
+  </div>
+</div>
+
+    
+</body>
+</html>

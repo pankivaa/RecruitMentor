@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form-style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('edit_profile') }}">
+            <button type="button" class="login-button">Мой профиль</button>
+        </a>
+        <button onclick="window.location.href='/history'">История подборов</button>
+    </div>
+
+    <div class="form-container">
+        <h1>Поиск кандидатов</h1>
+        <form id="search-form">
+            <textarea id="description" name="description" placeholder="Введите описание кандидата на английском языке" rows="6" required></textarea>
+            <button type="submit">Найти кандидатов</button>
+        </form>
+        <div id="loading" style="display: none;">
+            <img src="/static/spinner.gif" alt="Загрузка...">
+            <p>Идёт поиск кандидатов...</p>
+        </div>
+        <div id="results" style="display: none;"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('search-form');
+        const loading = document.getElementById('loading');
+        const results = document.getElementById('results');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            loading.style.display = 'block';
+            results.style.display = 'none';
+
+            const formData = new FormData(form);
+            fetch('/process', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                loading.style.display = 'none';
+                results.style.display = 'block';
+                results.innerHTML = `
+                    <p>${data.message}</p>
+                    <div class="candidate-list">
+                        ${data.candidates.map(candidate => `
+                            <div class="candidate">
+                                <h3>${candidate.name}</h3>
+                                <p><strong>Опыт:</strong> ${candidate.experience}</p>
+                                <p><strong>Навыки:</strong> ${candidate.skills}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            })
+            .catch(error => {
+                loading.style.display = 'none';
+                results.style.display = 'block';
+                results.innerHTML = '<p>Произошла ошибка при обработке запроса.</p>';
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

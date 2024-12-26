@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование профиля</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <style>
+        .error {
+            color: rgb(208, 155, 124);
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+
+        input.error-border {
+            border: 1px solid rgb(208, 155, 124);
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Мой профиль</h1>
+        <form action="{{ url_for('edit_profile') }}" method="post">
+            <label for="last_name">Фамилия:</label>
+            <input type="text" id="last_name" name="last_name" 
+                   class="{% if errors.last_name %}error-border{% endif %}" 
+                   value="{{ profile_data[0] }}" required>
+            {% if errors.last_name %}
+                <span class="error">{{ errors.last_name }}</span>
+            {% endif %}
+
+            <label for="first_name">Имя:</label>
+            <input type="text" id="first_name" name="first_name" 
+                   class="{% if errors.first_name %}error-border{% endif %}" 
+                   value="{{ profile_data[1] }}" required>
+            {% if errors.first_name %}
+                <span class="error">{{ errors.first_name }}</span>
+            {% endif %}
+
+            <label for="middle_name">Отчество:</label>
+            <input type="text" id="middle_name" name="middle_name" 
+                   class="{% if errors.middle_name %}error-border{% endif %}" 
+                   value="{{ profile_data[2] }}">
+            {% if errors.middle_name %}
+                <span class="error">{{ errors.middle_name }}</span>
+            {% endif %}
+
+            <label for="industry">Отрасль:</label>
+            <select id="industry" name="industry" 
+                    class="{% if errors.industry %}error-border{% endif %}">
+                <option value="IT" {% if profile_data[3] == "IT" %}selected{% endif %}>IT</option>
+                <option value="Финансы" {% if profile_data[3] == "Финансы" %}selected{% endif %}>Финансы</option>
+                <option value="Маркетинг" {% if profile_data[3] == "Маркетинг" %}selected{% endif %}>Маркетинг</option>
+                <option value="Образование" {% if profile_data[3] == "Образование" %}selected{% endif %}>Образование</option>
+            </select>
+            {% if errors.industry %}
+                <span class="error">{{ errors.industry }}</span>
+            {% endif %}
+
+            <label for="company">Компания:</label>
+            <input type="text" id="company" name="company" 
+                   class="{% if errors.company %}error-border{% endif %}" 
+                   value="{{ profile_data[4] }}">
+            {% if errors.company %}
+                <span class="error">{{ errors.company }}</span>
+            {% endif %}
+
+            <label for="position">Должность:</label>
+            <input type="text" id="position" name="position" 
+                   class="{% if errors.position %}error-border{% endif %}" 
+                   value="{{ profile_data[5] }}">
+            {% if errors.position %}
+                <span class="error">{{ errors.position }}</span>
+            {% endif %}
+
+            <label for="tariff">Тариф:</label>
+            <input type="text" id="tariff" name="tariff" 
+                   value="{{ profile_data[6] }}" readonly>
+
+            <button type="submit">Сохранить изменения</button>
+        </form>
+    </div>
+</body>
+</html>

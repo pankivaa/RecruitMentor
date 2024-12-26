@@ -1,0 +1,61 @@
+/* Основные стили страницы профиля */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #48D1CC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Контейнер профиля */
+.profile-container {
+  background-color: #1a1a1a;
+  padding: 20px 40px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Заголовок */
+.profile-container h1 {
+  color: #48D1CC;
+  text-align: center;
+}
+
+/* Стили для формы */
+form label {
+  display: block;
+  margin-top: 10px;
+  color: #48D1CC;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #48D1CC;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #48D1CC;
+}
+
+/* Кнопка отправки */
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #48D1CC;
+  color: #1a1a1a;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+form button:hover {
+  background-color: #2a2a2a;
+  color: #48D1CC;
+}

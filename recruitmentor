@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск кандидата</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recruitment.css') }}">
+</head>
+<body>
+    <div class="search-container">
+        <h1>Найти своего лучшего кандидата</h1>
+        <form action="{{ url_for('start_search') }}" method="POST">
+            <!-- Город -->
+            <label for="city">Город:</label>
+            <input type="text" id="city" name="city" placeholder="Введите город" required>
+
+            <!-- Образование -->
+            <label for="university">Университет/Учебное заведение:</label>
+            <input type="text" id="university" name="university" placeholder="Укажите учебное заведение" required>
+
+            <label for="faculty">Факультет/Направление:</label>
+            <input type="text" id="faculty" name="faculty" placeholder="Укажите факультет или направление" required>
+
+            <!-- Опыт работы -->
+            <label for="experience">Опыт работы (общий, в годах):</label>
+            <input type="number" id="experience" name="experience" placeholder="Введите количество лет опыта" required>
+
+            <!-- Желаемая должность -->
+            <label for="position">Желаемая должность:</label>
+            <input type="text" id="position" name="position" placeholder="Введите желаемую должность" required>
+
+            <!-- Профессиональные навыки -->
+            <label for="skills">Профессиональные навыки:</label>
+            <input type="text" id="skills" name="skills" placeholder="Введите профессиональные навыки" required>
+
+            <!-- Мягкие навыки -->
+            <label for="soft_skills">Мягкие навыки:</label>
+            <select id="soft_skills" name="soft_skills[]" multiple required>
+                <option value="Коммуникативные навыки">Коммуникативные навыки</option>
+                <option value="Лидерство и управление командами">Лидерство и управление командами</option>
+                <option value="Эмоциональный интеллект">Эмоциональный интеллект</option>
+                <option value="Способность к обучению">Способность к обучению</option>
+                <option value="Навыки работы в многозадачности">Навыки работы в многозадачности</option>
+                <option value="Стрессоустойчивость">Стрессоустойчивость</option>
+                <option value="Инициативность">Инициативность</option>
+                <option value="Креативность и инновационный подход">Креативность и инновационный подход</option>
+            </select>
+
+            <!-- Уровень английского языка -->
+            <label for="english_level">Уровень английского языка:</label>
+            <select id="english_level" name="english_level" required>
+                <option value="Не важно">Не важно</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+            </select>
+
+            <button type="submit">Начать поиск</button>
+        </form>
+    </div>
+</body>
+</html>
